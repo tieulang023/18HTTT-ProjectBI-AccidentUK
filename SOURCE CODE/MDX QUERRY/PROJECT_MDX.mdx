@@ -1,4 +1,4 @@
-﻿
+
 --1) Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng (Fatal, Serious, Slight) 
 --ở các Địa phương (Local_Authority_(District)) trong tất cả các năm.
 SELECT 
@@ -76,3 +76,9 @@ SELECT NON EMPTY
 	[DIM ACCIDENT SEVERITY].[ACCIDENT SEVERITY].[ACCIDENT SEVERITY])} ON ROWS
 FROM [CUBE_FACT_VEHICLE]
 
+
+--10)Thống kê số lượng phương tiện trong tai nạn theo độ nghiêm trọng của tai nạn trong các năm
+SELECT NON EMPTY
+ { ([DIM DATE].[YEAR KEY].[YEAR KEY]) } ON COLUMNS, 
+NON EMPTY ([DIM ACCIDENT SEVERITY].[ACCIDENT SEVERITY].[ACCIDENT SEVERITY]) ON ROWS
+FROM [CUBE_FACT_VEHICLE]
