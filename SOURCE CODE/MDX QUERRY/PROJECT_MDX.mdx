@@ -1,0 +1,78 @@
+﻿
+--1) Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng (Fatal, Serious, Slight) 
+--ở các Địa phương (Local_Authority_(District)) trong tất cả các năm.
+SELECT 
+	{([DIM DATE].[YEAR KEY].[YEAR KEY],
+    [DIM LOCAL AUTHORITY DISTRICT].[LOCAL AUTHORITY DISTRICT].[LOCAL AUTHORITY DISTRICT])} ON COLUMNS,
+    NON EMPTY [DIM CASUAL SEVERITY].[CASUAL SEVERITY].[CASUAL SEVERITY] ON ROWS
+FROM [CUBE_FACT_CASUALTY]
+
+
+--2)Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng ở các Địa Phương (Local_Authority_(District)) 
+--theo các Quý trong từng năm.
+SELECT  
+	{([DIM DATE].[YEAR KEY].[YEAR KEY],  [DIM DATE].[QUARTER KEY].[QUARTER KEY],
+    [DIM LOCAL AUTHORITY DISTRICT].[LOCAL AUTHORITY DISTRICT].[LOCAL AUTHORITY DISTRICT])} ON COLUMNS,
+    [DIM CASUAL SEVERITY].[CASUAL SEVERITY].[CASUAL SEVERITY] ON ROWS
+FROM [CUBE_FACT_CASUALTY]
+
+
+--3)Thống kê số lượng người tử vong theo Giới Tính, Loại Nạn Nhân (Casualty
+--Type) và Nhóm Tuổi (Age_Band_of_Casualty) theo các năm.
+SELECT NON EMPTY
+    {([DIM DATE].[YEAR KEY].[YEAR KEY],
+    [DIM AGE BAND].[AGE BAND].[AGE BAND],
+    [DIM CASUAL TYPE].[CASUAL TYPE].[CASUAL TYPE])} ON COLUMNS,
+    NON EMPTY [DIM GENDER].[GENDER].[GENDER] ON ROWS
+FROM [CUBE_FACT_CASUALTY]
+WHERE [DIM CASUAL SEVERITY].[CASUAL SEVERITY].[CASUAL SEVERITY].[Fatal]
+
+
+--4)Thống kê số lượng TNGT theo Mức Độ Nghiêm Trọng và Thời Điểm Trong
+--Ngày (Morning: 5am-12pm, Afternoon: 12pm-5pm, Evening: 5pm-9pm, Night:
+--9pm-5am) trong các năm.
+SELECT NON EMPTY
+    {([DIM DATE].[YEAR KEY].[YEAR KEY],
+    [DIM TIME PERIOD].[PERIOD NAME].[PERIOD NAME])} ON COLUMNS,
+    NON EMPTY [DIM ACCIDENT SEVERITY].[ACCIDENT SEVERITY].[ACCIDENT SEVERITY] ON ROWS
+FROM [CUBE_FACT_ACCIDENT]
+
+
+--5)Thống kê số lượng TNGT theo Mức Độ Nghiêm Trọng, Vùng
+--(Urban_or_Rural_Area), và Kiểu Đường (Road Type) trong các năm.
+SELECT NON EMPTY
+    {([DIM DATE].[YEAR KEY].[YEAR KEY],
+	[DIM URBAN RURAL].[URBAN RURAL NAME].[URBAN RURAL NAME], 
+	[DIM ROAD TYPE].[ROAD TYPE].[ROAD TYPE] ) } ON COLUMNS,
+    NON EMPTY [DIM ACCIDENT SEVERITY].[ACCIDENT SEVERITY].[ACCIDENT SEVERITY] ON ROWS
+FROM [CUBE_FACT_ACCIDENT]
+
+
+--6)Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng, Loại Nạn Nhân
+--(Casualty Type) và Độ Tuổi trong các năm
+SELECT NON EMPTY
+    {([DIM DATE].[YEAR KEY].[YEAR KEY],
+    [DIM AGE GROUP].[AGE GROUP].[AGE GROUP],
+    [DIM CASUAL TYPE].[CASUAL TYPE].[CASUAL TYPE])} ON COLUMNS,
+    NON EMPTY [DIM CASUAL SEVERITY].[CASUAL SEVERITY].[CASUAL SEVERITY] ON ROWS
+FROM [CUBE_FACT_CASUALTY]
+
+
+--7)Tổng hợp số lượng tai nạn theo Mục Đích Hành Trình (Journey Purpose) và
+--Loại Phương Tiện (Vehicle_Type).
+SELECT NON EMPTY
+    {( [Measures].[NUMBER OF ACCIDENT]) } ON COLUMNS,
+    NON EMPTY{( [DIM JOUNEY PURPOSE].[JOUNEY PURPOSE].[JOUNEY PURPOSE], 
+	[DIM VEHICLE TYPE].[VEHICLES TYPE].[VEHICLES TYPE])} ON ROWS
+FROM [CUBE_FACT_VEHICLE]
+
+
+--9)Thống kê số lượng tai nạn theo Mức Độ Nghiêm Trọng, Loại Phương Tiện
+--(Vehicle Type), Built-up Road trong các năm.
+SELECT NON EMPTY
+    {([Measures].[NUMBER OF ACCIDENT])} ON COLUMNS,
+    NON EMPTY{( [DIM DATE].[YEAR KEY].[YEAR KEY],[DIM BUILD UP ROAD].[BUILD UP ROAD].[BUILD UP ROAD], 
+	[DIM VEHICLE TYPE].[VEHICLES TYPE].[VEHICLES TYPE], 
+	[DIM ACCIDENT SEVERITY].[ACCIDENT SEVERITY].[ACCIDENT SEVERITY])} ON ROWS
+FROM [CUBE_FACT_VEHICLE]
+
