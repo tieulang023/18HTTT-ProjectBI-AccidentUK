@@ -1,0 +1,142 @@
+﻿<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <ProductVersion>15.0.19623.0</ProductVersion>
+  <SchemaVersion>9.0.2.10</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <Database>
+    <Name>18HTTT_06_Project_Cube.database</Name>
+    <FullPath>18HTTT_06_Project_Cube.database</FullPath>
+  </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>CUBE_FACT_CASUALTY.cube</Name>
+      <FullPath>CUBE_FACT_CASUALTY.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CUBE_FACT_CASUALTY.partitions</Name>
+          <FullPath>CUBE_FACT_CASUALTY.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CUBE_FACT_ACCIDENT.cube</Name>
+      <FullPath>CUBE_FACT_ACCIDENT.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CUBE_FACT_ACCIDENT.partitions</Name>
+          <FullPath>CUBE_FACT_ACCIDENT.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CUBE_FACT_VEHICLE.cube</Name>
+      <FullPath>CUBE_FACT_VEHICLE.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CUBE_FACT_VEHICLE.partitions</Name>
+          <FullPath>CUBE_FACT_VEHICLE.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>DIM ACCIDENTS.dim</Name>
+      <FullPath>DIM ACCIDENTS.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM AGE GROUP.dim</Name>
+      <FullPath>DIM AGE GROUP.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM GENDER.dim</Name>
+      <FullPath>DIM GENDER.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM CASUAL TYPE.dim</Name>
+      <FullPath>DIM CASUAL TYPE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM CASUAL SEVERITY.dim</Name>
+      <FullPath>DIM CASUAL SEVERITY.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM DATE.dim</Name>
+      <FullPath>DIM DATE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM AGE BAND.dim</Name>
+      <FullPath>DIM AGE BAND.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM LOCAL AUTHORITY DISTRICT.dim</Name>
+      <FullPath>DIM LOCAL AUTHORITY DISTRICT.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM TIME PERIOD.dim</Name>
+      <FullPath>DIM TIME PERIOD.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM ROAD TYPE.dim</Name>
+      <FullPath>DIM ROAD TYPE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM URBAN RURAL.dim</Name>
+      <FullPath>DIM URBAN RURAL.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM ACCIDENT SEVERITY.dim</Name>
+      <FullPath>DIM ACCIDENT SEVERITY.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM JOUNEY PURPOSE.dim</Name>
+      <FullPath>DIM JOUNEY PURPOSE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM BUILD UP ROAD.dim</Name>
+      <FullPath>DIM BUILD UP ROAD.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM VEHICLE TYPE.dim</Name>
+      <FullPath>DIM VEHICLE TYPE.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>PROJECT_DDS.ds</Name>
+      <FullPath>PROJECT_DDS.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>PROJECT_DDS_VIEW.dsv</Name>
+      <FullPath>PROJECT_DDS_VIEW.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
+  <MiningModels>
+    <ProjectItem>
+      <Name>ACCIDENT SEVERITY PREDICTION.dmm</Name>
+      <FullPath>ACCIDENT SEVERITY PREDICTION.dmm</FullPath>
+    </ProjectItem>
+  </MiningModels>
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>PROJECT_DDS</Id>
+            <Name>PROJECT_DDS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-EE7VJ8V;Password=;User ID=;Initial Catalog=DDS_ACC1</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>PROJECT_DDS</Id>
+            <Name>PROJECT_DDS</Name>
+            <Value xsi:type="xsd:int">1</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>
